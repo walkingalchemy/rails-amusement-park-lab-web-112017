@@ -9,7 +9,8 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @attraction = Attraction.new
+    @attraction = Attraction.find(params[:id])
+    @user = current_user
   end
 
   def edit
