@@ -1,0 +1,14 @@
+<div class="info">
+  <p><strong>Name: </strong><%= @attraction.name %></p>
+  <p><strong>Ticket Requirement: </strong><%= @attraction.tickets %></p>
+  <p><strong>Height Requirement: </strong><%= @attraction.min_height %></p>
+  <p><strong>Nausea Rating: </strong><%= @attraction.nausea_rating %></p>
+  <p><strong>Happiness Rating: </strong><%= @attraction.happiness_rating %></p>
+  <%= form_tag new_ride_path do %>
+  <%= hidden_field_tag :'attraction_id', @attraction.id %>
+  <%= hidden_field_tag :'user_id' %>
+  <!--  need add current_user id to here. when make sessions-->
+  <%= submit_tag "Go on this ride"%>
+  <% end %>
+  <p><%= link_to "See Attractions", attractions_path %></p>
+</div>

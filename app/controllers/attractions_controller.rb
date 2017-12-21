@@ -5,7 +5,7 @@ class AttractionsController < ApplicationController
   end
 
   def new
-    @attraction = Attraction.find(params[:id])
+    @attraction = Attraction.new
   end
 
   def show
