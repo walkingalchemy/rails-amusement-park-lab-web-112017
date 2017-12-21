@@ -18,10 +18,17 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+          <% if logged_in? %>
+          <a class="navbar-brand" href="<%= sessions_path %>" data-method="delete"/>Log Out</a>
+
+            <!-- <%= button_to "Logout", sessions_path, method: :delete %> -->
+          <% else %>
+          <a class="navbar-brand" href="<%= signin_path %>"/>Sign In</a>
+          <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
